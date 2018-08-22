@@ -11,4 +11,4 @@ cf-dev-org: rscale-training-2
 cf-dev-space: nick
 cf-dev-hostname: roster-nmartin
 cf-dev-domain: cfapps.io
-cf-dev-manifest: ../manifest.yml
+cf-dev-manifest: manifest.yml
