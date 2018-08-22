@@ -1,0 +1,9 @@
+applications:
+- name: roster
+  buildpack: java_buildpack
+  disk_quota: 1G
+  instances: 2
+  memory: 750M
+  services:
+  - roster-mysql
+  stack: cflinuxfs2
