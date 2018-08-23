@@ -6,4 +6,5 @@ applications:
   memory: 750M
   services:
   - roster-mysql
+  - config-server
   stack: cflinuxfs2
