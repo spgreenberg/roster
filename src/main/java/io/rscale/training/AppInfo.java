@@ -1,12 +1,32 @@
 package io.rscale.training;
 
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+
+@Configuration
+@EnableWebSecurity
+public class DisableBasicAuthAdapter extends WebSecurityConfigurerAdapter {
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+         http.csrf().disable()
+        	.authorizeRequests()
+        		.anyRequest().permitAll()
+        	.and().httpBasic().disable();
+    }
+
+}
+
 import java.util.List;
 
 public class AppInfo {
 
 	public static final String MYSQL = "MySQL";
 	public static final String H2 = "H2";
-	
+
 	private String appId;
 	private String appName;
 	private List<String> appUris;
@@ -22,11 +42,11 @@ public class AppInfo {
 	private String rosterB;
 	private String rosterC;
 	private String appVersion;
-	
+
 	public AppInfo() {}
 
 	public AppInfo(String appId, String appName, List<String> appUris, String cfApi, String instanceId,
-			int instanceIndex, String spaceId, String spaceName, String database, List<String> boundServices, 
+			int instanceIndex, String spaceId, String spaceName, String database, List<String> boundServices,
 			List<String> profiles, String rosterA, String rosterB, String rosterC, String appVersion) {
 		super();
 		this.appId = appId;
@@ -81,29 +101,29 @@ public class AppInfo {
 	public String getDatabase() {
 		return database;
 	}
-	
+
 	public List<String> getBoundServices() {
 		return boundServices;
 	}
-	
+
 	public List<String> getProfiles() {
 		return profiles;
 	}
-	
+
 	public String getRosterA() {
 		return rosterA;
 	}
-	
+
 	public String getRosterB() {
 		return rosterB;
 	}
-	
+
 	public String getRosterC() {
 		return rosterC;
 	}
-	
+
 	public String getAppVersion() {
 		return appVersion;
 	}
-	
+
 }
