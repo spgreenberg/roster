@@ -7,4 +7,5 @@ applications:
   services:
   - roster-mysql
   - config-server
+  - service-registry
   stack: cflinuxfs2
