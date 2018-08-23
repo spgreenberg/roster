@@ -4,4 +4,4 @@ spring:
   application:
     name: roster
 
-  message: Changing muh message
+  
