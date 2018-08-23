@@ -1,0 +1,14 @@
+app-name: roster
+initials: spg
+language: gradle
+
+github-app-repo-uri: "git@github.com:spgreenberg/roster.git"
+
+github-pipelines-repo-uri: "git@github.com:spgreenberg/training-pipelines.git"
+
+cf-dev-api: api.run.pivotal.io
+cf-dev-org: rscale-training-4
+cf-dev-space: learn
+cf-dev-hostname: roster-sgreenberg
+cf-dev-domain: cfapps.io
+cf-dev-manifest: dev-roster_manifest.yml
